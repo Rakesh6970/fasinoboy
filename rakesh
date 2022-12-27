@@ -1,0 +1,166 @@
+Version Control System:
+	
+A system that keeps records of your changes to a file
+Allows for collaborative development
+Allows you to know who made what changes and when
+Allows you to revert back to any changes
+
+VCS Types:
+	
+Local version control system
+Centralized version control system
+Distributed version control system
+
+Local Version Control System:
+A local version control system is a local database located on your local computer, in which every file change is stored as a patch. Every patch set contains only the changes made to the file since its last version. Only one person can work in the Local version Control System.
+	
+Centralized Version Control System:
+
+Centralized version control system (CVCS) uses a central server to store all files and enables team collaboration. It works on a single repository to which users can directly access a central server.
+Please refer to the diagram below to get a better idea of CVCS                                
+The repository in the above diagram indicates a central server that could be local or remote which is directly connected to each of the programmer’s workstation.
+Every programmer can extract or update their workstations with the data present in the repository or can make changes to the data or commit in the repository. Every operation is performed directly on the repository.
+Even though it seems pretty convenient to maintain a single repository, it has some major drawbacks. Some of them are:
+It is not locally available; meaning you always need to be connected to a network to perform any action.
+Since everything is centralized, in any case of the central server getting crashed or corrupted will result in losing the entire data of the project.
+This is when Distributed VCS comes to the rescue.
+Distributed Version Control System (Git)
+These systems do not necessarily rely on a central server to store all the versions of a project file.
+In Distributed VCS, every contributor has a local copy or “clone” of the main repository i.e. everyone maintains a local repository of their own which contains all the files and metadata present in the main repository.
+	As you can see in the above diagram, every programmer maintains a local repository on its own, which is actually the copy or clone of the central repository on their hard drive. They can commit and update their local repository without any interference.
+They can update their local repositories with new data from the central server by an operation called “pull” and affect changes to the main repository by an operation called “push” from their local repository. 
+SECTION-2
+==================================================================
+Github Account Creation:
+	Please go through the below link for the Github Account Creation
+https://www.minervaknows.com/how-to/how-to-create-a-github-account-github-com-yhub
+Personal Access Token Creation:
+	Please go through the below link for the Personal Access token creation. This personal access token is helpful to clone and push the code into the repository.
+https://www.geeksforgeeks.org/how-to-generate-personal-access-token-in-github/
+Finally you will get the code as like below
+	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
+Github Repository Creation:
+	Please go through the below link for the Github RepositoryCreation
+https://www.geeksforgeeks.org/creating-repository-in-github/
+Clone the repository that you have created in Github:
+To copy a repo into our Local system, get the url from the Github repo that you have created. The link will be like and also please see the below diagram for the exact information https://github.com/smrmaheshkumar/firstproject.git
+
+
+Now copy the personal access token and paste in the url as like below and use the command like below
+
+# git clone https://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@github.com/smrmaheshkumar/firstproject.git
+
+See the below image for cloning a repo
+
+
+
+
+
+
+
+To push a code into Github:
+
+After the creating files and directories
+
+# git add .
+# git commit -m “We added file1 and pythonfile”
+# git push
+
+
+You can see the code has been pushed. You can check in the Github account in your repository.
+
+
+For the first time you will get an Identity issue. Please follow the below steps to clear the issue as like in the below diagram. It is only one time activity.
+
+To provide user credentials:
+
+# git config --global user.email "email"
+# git config --global user.name "username"
+	
+To check the credentials:
+
+# cat ~/.gitconfig
+	or
+# git config - -global - -list
+
+
+In case this if this is not working
+# rm -f ~/.gitconfig
+
+# git config --global user.email "email"
+# git config --global user.name "username"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Git Architecture
+==================================================================
+
+Git Architecture:
+
+
+
+
+Git Ignore:
+	For hiding of incomplete working files
+
+	To ignore the files and do not track the git that file, so we will use gitignore
+How to do it:
+
+Create .gitignore file and add the file to be ignored
+
+# git add .
+# git commit -m “Ignored”
+# git push
+
+
+Once you have done your work then
+Remove the file from .gitignore
+# git add .
+# git commit -m “Worked on Ignored files”
+# git push
+
+Branching Strategies:
+
+# git branch -a ⇒ List all the branches
+# git branch production ⇒ Creates a new branch with the name production
+# git checkout production ⇒ Switches from main to production
+# git merge production master ⇒ Merges data from master to production
+Don’t use this command. Based upon the situation only we can use this
+# git push -u origin production ⇒ Pushes code to the particular branch
+
+	Deleting the Branch:
+
+	# git branch -d production ⇒ Delete the branch locally
+	# git branch -D production ⇒ Force delete the branch locally
+	# git push origin production --delete ⇒ Delete the branch in Remote repo
+
+	Git pull & git fetch
+
